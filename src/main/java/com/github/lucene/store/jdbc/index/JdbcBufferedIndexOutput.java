@@ -36,8 +36,8 @@ public abstract class JdbcBufferedIndexOutput extends ConfigurableBufferedIndexO
      */
     public static final String BUFFER_SIZE_SETTING = "indexOutput.bufferSize";
 
-    protected JdbcBufferedIndexOutput(final String resourceDescription) {
-        super(resourceDescription);
+    protected JdbcBufferedIndexOutput(final String resourceDescription, final String name) {
+        super(resourceDescription, name);
     }
 
     @Override

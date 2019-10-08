@@ -21,8 +21,8 @@ public abstract class ConfigurableBufferedIndexOutput extends IndexOutput {
 
     protected int bufferSize = DEFAULT_BUFFER_SIZE;
 
-    protected ConfigurableBufferedIndexOutput(final String resourceDescription) {
-        super(resourceDescription);
+    protected ConfigurableBufferedIndexOutput(final String resourceDescription, final String name) {
+        super(resourceDescription, name);
     }
 
     protected void initBuffer(final int bufferSize) {

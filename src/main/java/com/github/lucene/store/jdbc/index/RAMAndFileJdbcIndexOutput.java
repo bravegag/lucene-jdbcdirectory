@@ -65,7 +65,7 @@ public class RAMAndFileJdbcIndexOutput extends IndexOutput implements JdbcIndexC
     private final Checksum crc;
 
     public RAMAndFileJdbcIndexOutput() {
-        super("RAMAndFileJdbcIndexOutput");
+        super("RAMAndFileJdbcIndexOutput description", "RAMAndFileJdbcIndexOutput");
         crc = new BufferedChecksum(new CRC32());
     }
 

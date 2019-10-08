@@ -34,8 +34,8 @@ public abstract class AbstractJdbcIndexOutput extends JdbcBufferedIndexOutput {
 
     protected JdbcDirectory jdbcDirectory;
 
-    protected AbstractJdbcIndexOutput(final String resourceDescription) {
-        super(resourceDescription);
+    protected AbstractJdbcIndexOutput(final String resourceDescription, final String name) {
+        super(resourceDescription, name);
     }
 
     @Override

@@ -47,7 +47,7 @@ public class FileJdbcIndexOutput extends AbstractJdbcIndexOutput {
     private File tempFile;
 
     public FileJdbcIndexOutput() {
-        super("FileJdbcIndexOutput");
+        super("FileJdbcIndexOutput description", "FileJdbcIndexOutput");
     }
 
     @Override

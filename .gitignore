@@ -2,3 +2,5 @@ target/
 .settings/
 .project
 .classpath
+/lucene-jdbcdirectory.iml
+.idea/

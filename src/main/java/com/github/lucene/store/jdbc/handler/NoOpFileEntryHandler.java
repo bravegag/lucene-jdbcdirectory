@@ -83,7 +83,7 @@ public class NoOpFileEntryHandler implements FileEntryHandler {
     private static class NoOpIndexOutput extends IndexOutput {
 
         protected NoOpIndexOutput() {
-            super("NoOpIndexOutput");
+            super("NoOpIndexOutput decription", "NoOpIndexOutput");
         }
 
         @Override

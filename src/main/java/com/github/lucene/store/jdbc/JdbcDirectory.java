@@ -21,10 +21,7 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.sql.DataSource;
 
@@ -482,7 +479,7 @@ public class JdbcDirectory extends Directory {
     }
 
     @Override
-    public void renameFile(final String from, final String to) throws IOException {
+    public void rename(final String from, final String to) throws IOException {
         getFileEntryHandler(from).renameFile(from, to);
     }
 
@@ -495,42 +492,58 @@ public class JdbcDirectory extends Directory {
     }
 
     @Override
-    public void close() throws IOException {
-        IOException last = null;
-        for (final FileEntryHandler fileEntryHandler : fileEntryHandlers.values()) {
-            try {
-                fileEntryHandler.close();
-            } catch (final IOException e) {
-                last = e;
-            }
-        }
-        if (last != null) {
-            throw last;
-        }
+    public Set<String> getPendingDeletions() throws IOException {
+        // TODO: implement
+        return null;
     }
 
-    /***********************************************************************************************
-     * SETTER/GETTERS METHODS
-     ***********************************************************************************************/
+    @Override
+    public void syncMetaData() throws IOException {
+        // TODO: implement
+    }
 
-    public Dialect getDialect() {
+    @Override
+    public IndexOutput createTempOutput(String var1, String var2, IOContext var3) throws IOException {
+      // TODO: implement
+      return null;
+    }
+
+    @Override
+      public void close() throws IOException {
+          IOException last = null;
+          for (final FileEntryHandler fileEntryHandler : fileEntryHandlers.values()) {
+              try {
+                  fileEntryHandler.close();
+              } catch (final IOException e) {
+                  last = e;
+              }
+          }
+          if (last != null) {
+              throw last;
+          }
+      }
+
+      /***********************************************************************************************
+      * SETTER/GETTERS METHODS
+      ***********************************************************************************************/
+
+      public Dialect getDialect() {
         return dialect;
-    }
+      }
 
-    public JdbcTemplate getJdbcTemplate() {
+      public JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
-    }
+      }
 
-    public JdbcTable getTable() {
+      public JdbcTable getTable() {
         return table;
-    }
+      }
 
-    public JdbcDirectorySettings getSettings() {
+      public JdbcDirectorySettings getSettings() {
         return settings;
-    }
+      }
 
-    public DataSource getDataSource() {
-        return dataSource;
-    }
-
+      public DataSource getDataSource() {
+          return dataSource;
+      }
 }

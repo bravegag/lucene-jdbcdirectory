@@ -40,7 +40,7 @@ public class RAMJdbcIndexOutput extends AbstractJdbcIndexOutput {
     private static final Logger logger = LoggerFactory.getLogger(RAMJdbcIndexOutput.class);
 
     public RAMJdbcIndexOutput() {
-        super("RAMAndFileJdbcIndexOutput");
+        super("RAMAndFileJdbcIndexOutput description", "RAMAndFileJdbcIndexOutput");
     }
 
     private class RAMFile {
